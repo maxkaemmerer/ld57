@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv6xynf5fl64e"]
+
+[ext_resource type="AudioStream" uid="uid://3tiqhwprcc7h" path="res://sound/LD57_Maze_Background_01.mp3" id="1_k17rw"]
+
+[node name="MusicManager" type="Node"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_k17rw")
+autoplay = true

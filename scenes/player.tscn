@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cysuiflbdp4wk"]
+[gd_scene load_steps=11 format=3 uid="uid://cysuiflbdp4wk"]
 
 [ext_resource type="Texture2D" uid="uid://du6mosapagwpc" path="res://graphics/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dafn1hry3wh0d" path="res://scenes/player.gd" id="1_g2els"]
@@ -6,10 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://c5kwd6ycwhigf" path="res://sound/Fix_02_footsteps-dirt-gravel-01.mp3" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://cqui8d4piouxp" path="res://sound/Fix_02_footsteps-dirt-gravel-02.mp3" id="5_smehm"]
 [ext_resource type="AudioStream" uid="uid://0bjbe8l56uke" path="res://sound/Fix_02_footsteps-dirt-gravel-03.mp3" id="6_ur7pv"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 2.0
-height = 4.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qhqgy"]
 playback_mode = 1
@@ -22,16 +18,25 @@ stream_2/stream = ExtResource("5_smehm")
 stream_3/stream = ExtResource("6_ur7pv")
 stream_3/weight = 0.8
 
+[sub_resource type="Gradient" id="Gradient_tuyoq"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fjrip"]
+gradient = SubResource("Gradient_tuyoq")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 2.0
+height = 10.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_mask = 6
 floor_stop_on_slope = false
 floor_constant_speed = true
 script = ExtResource("1_g2els")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3vyb7")
@@ -41,3 +46,14 @@ stream = SubResource("AudioStreamRandomizer_qhqgy")
 volume_db = -3.0
 autoplay = true
 bus = &"SFX"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.943058, 0.68112, 0.22848, 1)
+energy = 1.21
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_fjrip")
+texture_scale = 2.47
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_g2els")

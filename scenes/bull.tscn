@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://77d2u5tv5vm8"]
+[gd_scene load_steps=6 format=3 uid="uid://77d2u5tv5vm8"]
 
 [ext_resource type="Script" uid="uid://dhempykmgembg" path="res://scenes/bull.gd" id="1_qus7o"]
 [ext_resource type="Texture2D" uid="uid://ct85ag7p83ilb" path="res://graphics/bull.png" id="2_hqf4x"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qus7o"]
+light_mode = 2
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjux2"]
 radius = 4.0
 height = 12.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qus7o"]
+polygon = PackedVector2Array(-6, -7, -5, -7, -5, -6, -4, -6, -4, -5, -2, -5, -2, -6, 2, -6, 2, -5, 4, -5, 4, -6, 5, -6, 5, -7, 6, -7, 6, -5, 5, -5, 5, -4, 4, -4, 4, -3, 3, -3, 3, -2, 5, -2, 5, -1, 6, -1, 6, 3, 5, 3, 5, 4, 4, 4, 4, 7, 2, 7, 2, 5, -2, 5, -2, 7, -4, 7, -4, 4, -3, 4, -3, 3, -2, 3, -2, 2, -3, 2, -3, 0, -4, 0, -4, 3, -5, 3, -5, 4, -6, 4, -6, -1, -5, -1, -5, -2, -3, -2, -3, -3, -4, -3, -4, -4, -5, -4, -5, -5, -6, -5)
 
 [node name="Bull" type="CharacterBody2D"]
 z_index = 1
@@ -14,9 +20,13 @@ collision_mask = 3
 script = ExtResource("1_qus7o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_qus7o")
 texture = ExtResource("2_hqf4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pjux2")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_qus7o")

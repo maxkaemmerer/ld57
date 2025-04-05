@@ -95,4 +95,4 @@ p2-right={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.316785, 0.316785, 0.316785, 1)
+environment/defaults/default_clear_color=Color(0.0419192, 0.00869824, 0.0730463, 1)

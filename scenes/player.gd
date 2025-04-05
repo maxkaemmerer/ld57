@@ -7,11 +7,14 @@ const SPEED = 150.0
 @export var player_id: PlayerId
 
 @onready var player_walking = $PlayerWalking
+@onready var sprite = $Sprite2D
 
 var ping
 
 func _ready() -> void:
 	ping = preload("res://scenes/ping.tscn")
+	if player_id == PlayerId.P2:
+		sprite.modulate = Color(.9, .6, .4)
 func _physics_process(delta: float) -> void:
 	
 	# Handle Input

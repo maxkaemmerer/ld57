@@ -2,8 +2,8 @@ extends Node
 
 @onready var viewport1 = $Viewports/P1/SubViewport
 @onready var viewport2 = $Viewports/P2/SubViewport
-@onready var camera1 = $Viewports/P1/SubViewport/Camera2D
-@onready var camera2 = $Viewports/P2/SubViewport/Camera2D
+@onready var camera1 = $Viewports/P1/SubViewport/Camera/Camera2D
+@onready var camera2 = $Viewports/P2/SubViewport/Camera/Camera2D
 @onready var world = $Viewports/P1/SubViewport/Level
 
 

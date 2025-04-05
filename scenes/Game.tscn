@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq5xyeadlc6kj"]
+[gd_scene load_steps=5 format=3 uid="uid://dq5xyeadlc6kj"]
 
 [ext_resource type="Script" uid="uid://bscvnwiym87ro" path="res://scenes/game.gd" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://btaqcg0tsl2fy" path="res://scenes/background.gd" id="2_78awf"]
 [ext_resource type="PackedScene" uid="uid://c2w7xxx07dq3d" path="res://scenes/levels/test_level.tscn" id="2_cpr0p"]
-[ext_resource type="Script" uid="uid://r5o7pkcrhq0h" path="res://scenes/camera_2d.gd" id="2_qbsmt"]
+[ext_resource type="PackedScene" uid="uid://c1ux186oa14f6" path="res://scenes/Camera.tscn" id="3_cpr0p"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ibkli")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 480.0
-offset_bottom = 480.0
+[node name="Background" type="ColorRect" parent="."]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
+script = ExtResource("2_78awf")
 
 [node name="Viewports" type="HBoxContainer" parent="."]
 anchors_preset = 15
@@ -30,13 +30,13 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Viewports/P1"]
 handle_input_locally = false
-size = Vector2i(232, 480)
+canvas_item_default_texture_filter = 0
+size = Vector2i(952, 1080)
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="Viewports/P1/SubViewport"]
-script = ExtResource("2_qbsmt")
-
 [node name="Level" parent="Viewports/P1/SubViewport" instance=ExtResource("2_cpr0p")]
+
+[node name="Camera" parent="Viewports/P1/SubViewport" instance=ExtResource("3_cpr0p")]
 
 [node name="P2" type="SubViewportContainer" parent="Viewports"]
 layout_mode = 2
@@ -45,8 +45,8 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Viewports/P2"]
 handle_input_locally = false
-size = Vector2i(232, 480)
+canvas_item_default_texture_filter = 0
+size = Vector2i(952, 1080)
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="Viewports/P2/SubViewport"]
-script = ExtResource("2_qbsmt")
+[node name="Camera" parent="Viewports/P2/SubViewport" instance=ExtResource("3_cpr0p")]

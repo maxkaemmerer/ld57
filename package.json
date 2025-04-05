@@ -4,7 +4,7 @@
   "description": "This is the project for LD57 \"Jam\" by Meiyan Chen and Max Kämmerer.",
   "main": "index.js",
   "scripts": {
-	"game": "http-server -o ./.build/ld57.html"
+	"game": "http-server -o ./.build/index.html"
   },
   "repository": {
 	"type": "git",

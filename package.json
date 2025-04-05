@@ -1,0 +1,22 @@
+{
+  "name": "ld57",
+  "version": "1.0.0",
+  "description": "This is the project for LD57 \"Jam\" by Meiyan Chen and Max Kämmerer.",
+  "main": "index.js",
+  "scripts": {
+	"game": "http-server -o ./.build/ld57.html"
+  },
+  "repository": {
+	"type": "git",
+	"url": "git+https://github.com/maxkaemmerer/ld57.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+	"url": "https://github.com/maxkaemmerer/ld57/issues"
+  },
+  "homepage": "https://github.com/maxkaemmerer/ld57#readme",
+  "dependencies": {
+	"http-server": "^14.1.1"
+  }
+}

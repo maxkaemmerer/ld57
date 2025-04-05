@@ -5,6 +5,11 @@ enum PlayerId {P1 = 1, P2 = 2}
 const SPEED = 150.0
 @export var player_id: PlayerId
 
+var ping
+
+func _ready() -> void:
+	ping = preload("res://scenes/ping.tscn")
+
 
 func _physics_process(delta: float) -> void:	
 	velocity = Vector2(0, 0)
@@ -20,7 +25,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed(player_prefix + "-right"):
 		velocity.x += SPEED
 	if Input.is_action_just_pressed(player_prefix + "-sound"):
-		print("Sound " + player_prefix)
+		var ping_instance = ping.instantiate()
+		ping_instance.position = position
+		add_sibling(ping_instance)
 		
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:

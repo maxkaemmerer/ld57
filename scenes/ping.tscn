@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://8cxttva0wjgh"]
+[gd_scene load_steps=2 format=3 uid="uid://vae75jlbh50g"]
 
 [ext_resource type="Script" uid="uid://d4brdpnm4h0sp" path="res://graphics/shaders/ping.gd" id="2_6ihqj"]
 

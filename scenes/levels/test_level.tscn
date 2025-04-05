@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2w7xxx07dq3d"]
+
+[ext_resource type="PackedScene" uid="uid://yy0yxqerc1rh" path="res://scenes/hedge.tscn" id="1_yautc"]
+[ext_resource type="PackedScene" uid="uid://cysuiflbdp4wk" path="res://scenes/player.tscn" id="2_fr1um"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Hedge" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 8)
+
+[node name="Hedge22" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(88, 56)
+
+[node name="Hedge23" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(40, 136)
+
+[node name="Hedge24" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(56, 136)
+
+[node name="Hedge25" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 136)
+
+[node name="Hedge26" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 120)
+
+[node name="Hedge27" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 152)
+
+[node name="Hedge28" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 136)
+
+[node name="Hedge29" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 120)
+
+[node name="Hedge30" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 104)
+
+[node name="Hedge31" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 88)
+
+[node name="Hedge14" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 72)
+
+[node name="Hedge15" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 56)
+
+[node name="Hedge16" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 104)
+
+[node name="Hedge17" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(24, 104)
+
+[node name="Hedge18" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(40, 104)
+
+[node name="Hedge19" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 88)
+
+[node name="Hedge20" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(40, 72)
+
+[node name="Hedge21" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 56)
+
+[node name="Hedge2" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(40, 56)
+
+[node name="Hedge3" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 40)
+
+[node name="Hedge4" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 24)
+
+[node name="Hedge5" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(88, 8)
+
+[node name="Hedge6" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(72, 8)
+
+[node name="Hedge7" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(56, 8)
+
+[node name="Hedge8" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(40, 40)
+
+[node name="Hedge9" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(24, 40)
+
+[node name="Hedge10" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 40)
+
+[node name="Hedge11" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(40, 8)
+
+[node name="Hedge12" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(24, 8)
+
+[node name="Hedge13" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(8, 24)
+
+[node name="Player" parent="." instance=ExtResource("2_fr1um")]
+position = Vector2(24, 24)

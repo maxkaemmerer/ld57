@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bscvnwiym87ro" path="res://scenes/game.gd" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://btaqcg0tsl2fy" path="res://scenes/background.gd" id="2_78awf"]
-[ext_resource type="PackedScene" uid="uid://c2w7xxx07dq3d" path="res://scenes/levels/test_level.tscn" id="2_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://c1ux186oa14f6" path="res://scenes/Camera.tscn" id="3_cpr0p"]
+[ext_resource type="PackedScene" uid="uid://chgemd6htxchd" path="res://scenes/LevelBuilder.tscn" id="5_s0nni"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ibkli")
@@ -35,8 +35,6 @@ audio_listener_enable_2d = true
 size = Vector2i(952, 1080)
 render_target_update_mode = 4
 
-[node name="Level" parent="Viewports/P1/SubViewport" instance=ExtResource("2_cpr0p")]
-
 [node name="Camera" parent="Viewports/P1/SubViewport" instance=ExtResource("3_cpr0p")]
 
 [node name="P2" type="SubViewportContainer" parent="Viewports"]
@@ -52,3 +50,5 @@ size = Vector2i(952, 1080)
 render_target_update_mode = 4
 
 [node name="Camera" parent="Viewports/P2/SubViewport" instance=ExtResource("3_cpr0p")]
+
+[node name="LevelBuilder" parent="." instance=ExtResource("5_s0nni")]

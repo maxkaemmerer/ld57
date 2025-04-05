@@ -1,10 +1,9 @@
 extends CharacterBody2D
 
-enum PlayerId {P1 = 1, P2 = 2}
 
 const SPEED = 150.0
 
-@export var player_id: PlayerId = PlayerId.P1
+@export var player_id: int
 
 @onready var player_walking = $PlayerWalking
 @onready var sprite = $Sprite2D
@@ -13,13 +12,13 @@ var ping
 
 func _ready() -> void:
 	ping = preload("res://scenes/ping.tscn")
-	if player_id == PlayerId.P2:
+	if player_id == 2:
 		sprite.modulate = Color(.9, .6, .4)
 func _physics_process(delta: float) -> void:
-	
 	# Handle Input
 	velocity = Vector2.ZERO
 	var player_prefix: String = "p" + str(player_id)
+
 	if Input.is_action_pressed(player_prefix + "-down"):
 		velocity.y += SPEED
 	if Input.is_action_pressed(player_prefix + "-up"):

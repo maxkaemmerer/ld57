@@ -11,7 +11,7 @@ func _ready() -> void:
 	velocity = Vector2.DOWN
 
 func _physics_process(delta: float) -> void:
-	print(target, velocity)
+	#print(target, velocity)
 	vision.target_position = Vector2.DOWN * 50
 	
 	if vision.is_colliding():

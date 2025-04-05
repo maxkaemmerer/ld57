@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2w7xxx07dq3d"]
+[gd_scene load_steps=4 format=3 uid="uid://c2w7xxx07dq3d"]
 
 [ext_resource type="PackedScene" uid="uid://yy0yxqerc1rh" path="res://scenes/hedge.tscn" id="1_yautc"]
 [ext_resource type="PackedScene" uid="uid://cysuiflbdp4wk" path="res://scenes/player.tscn" id="2_fr1um"]
+[ext_resource type="PackedScene" uid="uid://bdrrub5r5pqwr" path="res://scenes/floor.tscn" id="3_fr1um"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -107,3 +108,72 @@ position = Vector2(24, 8)
 
 [node name="Hedge13" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 24)
+
+[node name="Floor" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(24, 24)
+
+[node name="Floor17" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(88, 104)
+
+[node name="Floor18" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(88, 88)
+
+[node name="Floor19" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(88, 72)
+
+[node name="Floor20" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 152)
+
+[node name="Floor21" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(72, 72)
+
+[node name="Floor22" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(40, 152)
+
+[node name="Floor23" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(24, 152)
+
+[node name="Floor8" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(24, 136)
+
+[node name="Floor9" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(24, 120)
+
+[node name="Floor10" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 120)
+
+[node name="Floor11" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(40, 120)
+
+[node name="Floor12" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 104)
+
+[node name="Floor13" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 88)
+
+[node name="Floor14" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 72)
+
+[node name="Floor15" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 56)
+
+[node name="Floor16" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 40)
+
+[node name="Floor2" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(40, 88)
+
+[node name="Floor3" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(24, 88)
+
+[node name="Floor4" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(24, 72)
+
+[node name="Floor5" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(24, 56)
+
+[node name="Floor6" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(56, 24)
+
+[node name="Floor7" parent="Maze" instance=ExtResource("3_fr1um")]
+position = Vector2(40, 24)

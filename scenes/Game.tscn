@@ -31,7 +31,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Viewports/P1"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(952, 1080)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Level" parent="Viewports/P1/SubViewport" instance=ExtResource("2_cpr0p")]
@@ -46,7 +46,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Viewports/P2"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(952, 1080)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Camera" parent="Viewports/P2/SubViewport" instance=ExtResource("3_cpr0p")]

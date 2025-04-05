@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://yy0yxqerc1rh"]
+[gd_scene load_steps=4 format=3 uid="uid://yy0yxqerc1rh"]
 
+[ext_resource type="Script" uid="uid://ubyw0r6wpm5a" path="res://scenes/hedge.gd" id="1_11ilm"]
 [ext_resource type="Texture2D" uid="uid://b153pouch7on0" path="res://graphics/hedge.png" id="1_65ieu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65ieu"]
@@ -8,6 +9,7 @@ size = Vector2(14, 14)
 [node name="Hedge" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 5
+script = ExtResource("1_11ilm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_65ieu")

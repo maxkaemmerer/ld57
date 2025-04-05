@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ld57"
-run/main_scene="uid://c2w7xxx07dq3d"
+run/main_scene="uid://dq5xyeadlc6kj"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -95,3 +95,4 @@ p2-right={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.316785, 0.316785, 0.316785, 1)

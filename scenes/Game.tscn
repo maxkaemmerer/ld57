@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq5xyeadlc6kj"]
+
+[ext_resource type="Script" uid="uid://bscvnwiym87ro" path="res://scenes/game.gd" id="1_ibkli"]
+[ext_resource type="PackedScene" uid="uid://c2w7xxx07dq3d" path="res://scenes/levels/test_level.tscn" id="2_cpr0p"]
+[ext_resource type="Script" uid="uid://r5o7pkcrhq0h" path="res://scenes/camera_2d.gd" id="2_qbsmt"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_ibkli")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 480.0
+offset_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Viewports" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="P1" type="SubViewportContainer" parent="Viewports"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Viewports/P1"]
+handle_input_locally = false
+size = Vector2i(232, 480)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Viewports/P1/SubViewport"]
+script = ExtResource("2_qbsmt")
+
+[node name="Level" parent="Viewports/P1/SubViewport" instance=ExtResource("2_cpr0p")]
+
+[node name="P2" type="SubViewportContainer" parent="Viewports"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Viewports/P2"]
+handle_input_locally = false
+size = Vector2i(232, 480)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Viewports/P2/SubViewport"]
+script = ExtResource("2_qbsmt")

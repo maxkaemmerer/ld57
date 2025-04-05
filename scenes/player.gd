@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
+enum PlayerId {P1 = 1, P2 = 2}
 
 const SPEED = 150.0
-@export var player_prefix = "p1"
+@export var player_id: PlayerId
 
 
 func _physics_process(delta: float) -> void:	
 	velocity = Vector2(0, 0)
+	
+	var player_prefix: String = "p" + str(player_id)
 	
 	if Input.is_action_pressed(player_prefix + "-down"):
 		velocity.y += SPEED

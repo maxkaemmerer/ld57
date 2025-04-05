@@ -7,10 +7,11 @@
 
 [node name="Player 1" parent="." instance=ExtResource("2_fr1um")]
 position = Vector2(24, 24)
+player_id = 1
 
 [node name="Player 2" parent="." instance=ExtResource("2_fr1um")]
 position = Vector2(112, 128)
-player_prefix = "p2"
+player_id = 2
 
 [node name="Maze" type="Node" parent="."]
 

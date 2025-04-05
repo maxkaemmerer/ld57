@@ -4,7 +4,7 @@ enum PlayerId {P1 = 1, P2 = 2}
 
 const SPEED = 150.0
 
-@export var player_id: PlayerId
+@export var player_id: PlayerId = PlayerId.P1
 
 @onready var player_walking = $PlayerWalking
 @onready var sprite = $Sprite2D
@@ -41,5 +41,5 @@ func _physics_process(delta: float) -> void:
 	# Handle Collusion
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
-			print(collision_info)
+			#print(collision_info)
 			velocity = velocity.bounce(collision_info.get_normal())

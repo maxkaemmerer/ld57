@@ -1,24 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://cysuiflbdp4wk"]
+[gd_scene load_steps=9 format=3 uid="uid://cysuiflbdp4wk"]
 
 [ext_resource type="Texture2D" uid="uid://du6mosapagwpc" path="res://graphics/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dafn1hry3wh0d" path="res://scenes/player.gd" id="1_g2els"]
-[ext_resource type="AudioStream" uid="uid://fyho1ifrnkb5" path="res://sound/footsteps-dirt-gravel_1a.mp3" id="3_fjrip"]
-[ext_resource type="AudioStream" uid="uid://5j5lbym78vu1" path="res://sound/footsteps-dirt-gravel_1b.mp3" id="4_smehm"]
-[ext_resource type="AudioStream" uid="uid://dq8e6lfffoe5x" path="res://sound/footsteps-dirt-gravel_2a.mp3" id="5_ur7pv"]
-[ext_resource type="AudioStream" uid="uid://onae7u6nhiry" path="res://sound/footsteps-dirt-gravel_2b.mp3" id="6_y4r1p"]
-[ext_resource type="AudioStream" uid="uid://d8cli0lno2sr" path="res://sound/footsteps-dirt-gravel_2c.mp3" id="7_d2wvv"]
+[ext_resource type="AudioStream" uid="uid://bi3pki47j7nrt" path="res://sound/02_footsteps-dirt-gravel_1_sec.mp3" id="3_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://c5kwd6ycwhigf" path="res://sound/Fix_02_footsteps-dirt-gravel-01.mp3" id="4_fjrip"]
+[ext_resource type="AudioStream" uid="uid://cqui8d4piouxp" path="res://sound/Fix_02_footsteps-dirt-gravel-02.mp3" id="5_smehm"]
+[ext_resource type="AudioStream" uid="uid://0bjbe8l56uke" path="res://sound/Fix_02_footsteps-dirt-gravel-03.mp3" id="6_ur7pv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 2.0
 height = 4.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tuyoq"]
-streams_count = 5
-stream_0/stream = ExtResource("3_fjrip")
-stream_1/stream = ExtResource("4_smehm")
-stream_2/stream = ExtResource("5_ur7pv")
-stream_3/stream = ExtResource("6_y4r1p")
-stream_4/stream = ExtResource("7_d2wvv")
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qhqgy"]
+playback_mode = 1
+streams_count = 4
+stream_0/stream = ExtResource("3_tuyoq")
+stream_0/weight = 1.889
+stream_1/stream = ExtResource("4_fjrip")
+stream_1/weight = 1.2
+stream_2/stream = ExtResource("5_smehm")
+stream_3/stream = ExtResource("6_ur7pv")
+stream_3/weight = 0.8
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -35,7 +37,7 @@ shape = SubResource("CapsuleShape2D_g2els")
 texture = ExtResource("1_3vyb7")
 
 [node name="PlayerWalking" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_tuyoq")
+stream = SubResource("AudioStreamRandomizer_qhqgy")
 volume_db = -3.0
 autoplay = true
 bus = &"SFX"

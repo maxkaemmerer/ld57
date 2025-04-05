@@ -5,98 +5,104 @@
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="Hedge" parent="." instance=ExtResource("1_yautc")]
+[node name="Player 1" parent="." instance=ExtResource("2_fr1um")]
+position = Vector2(24, 24)
+
+[node name="Player 2" parent="." instance=ExtResource("2_fr1um")]
+position = Vector2(112, 128)
+player_prefix = "p2"
+
+[node name="Maze" type="Node" parent="."]
+
+[node name="Hedge" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 8)
 
-[node name="Hedge22" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge22" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(88, 56)
 
-[node name="Hedge23" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge23" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(40, 136)
 
-[node name="Hedge24" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge24" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(56, 136)
 
-[node name="Hedge25" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge25" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 136)
 
-[node name="Hedge26" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge26" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 120)
 
-[node name="Hedge27" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge27" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 152)
 
-[node name="Hedge28" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge28" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 136)
 
-[node name="Hedge29" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge29" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 120)
 
-[node name="Hedge30" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge30" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 104)
 
-[node name="Hedge31" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge31" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 88)
 
-[node name="Hedge14" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge14" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 72)
 
-[node name="Hedge15" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge15" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 56)
 
-[node name="Hedge16" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge16" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 104)
 
-[node name="Hedge17" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge17" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(24, 104)
 
-[node name="Hedge18" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge18" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(40, 104)
 
-[node name="Hedge19" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge19" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 88)
 
-[node name="Hedge20" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge20" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(40, 72)
 
-[node name="Hedge21" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge21" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 56)
 
-[node name="Hedge2" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge2" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(40, 56)
 
-[node name="Hedge3" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge3" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 40)
 
-[node name="Hedge4" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge4" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 24)
 
-[node name="Hedge5" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge5" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(88, 8)
 
-[node name="Hedge6" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge6" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(72, 8)
 
-[node name="Hedge7" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge7" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(56, 8)
 
-[node name="Hedge8" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge8" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(40, 40)
 
-[node name="Hedge9" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge9" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(24, 40)
 
-[node name="Hedge10" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge10" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 40)
 
-[node name="Hedge11" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge11" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(40, 8)
 
-[node name="Hedge12" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge12" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(24, 8)
 
-[node name="Hedge13" parent="." instance=ExtResource("1_yautc")]
+[node name="Hedge13" parent="Maze" instance=ExtResource("1_yautc")]
 position = Vector2(8, 24)
-
-[node name="Player" parent="." instance=ExtResource("2_fr1um")]
-position = Vector2(24, 24)

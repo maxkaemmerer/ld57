@@ -1,8 +1,8 @@
 extends Node2D
 
+@onready var particles = $CPUParticles2D
 
 func _ready() -> void:
-	var particles: CPUParticles2D = get_node("CPUParticles2D")
 	particles.emitting = true
 	particles.finished.connect(on_finished)
 

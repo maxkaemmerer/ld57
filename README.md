@@ -9,31 +9,24 @@ We thought about making a sort of puzzle game where both players hold the end of
 
 Mei got to work on music and sound effects while Max started working on the basic sprites, that were intended to be placeholders but ended up staying. Then we worked on player movement, setting up multiple viewports and controlling 2 characters at the same time. We built a basic debug level to test collision and visuals, worked on web exports and automated publishing to Github Pages.
 
-<img src="./graphics/bull.png" alt="Minotaur" width="500" style="image-rendering: pixelated !important"/>
-
-<img src="./graphics/player.png" alt="Player" width="200" style="image-rendering: pixelated !important"/>
-
-
-<img src="./graphics/hedge.png" alt="Hedge" width="200" style="image-rendering: pixelated !important"/>
-<img src="./graphics/floor.png" alt="Hedge" width="200" style="image-rendering: pixelated !important"/>
+![Minotaur](./graphics/bull.png)
+![Player](./graphics/player.png)
+![Hedge](./graphics/hedge.png)
+![Floor](./graphics/floor.png)
 
 Then we started working on the first iteration of the Minotaur, or bull like it is called in the game files. Player detection was not a big problem, we essentially made the Minotaur walk to the location it last saw a player and then had it look around to search for the player again. We also liked the idea of a charge attack that would destroy walls and worked on that. Since the cameras are pretty zoomed in on purpose, so the player could not see the whole map, we wanted the player to able to call out to each other, creating a particle effect that would reveal their general location. We were hoping to have the Minotaur react to this calling out and chase the player down but has issues with pathfinding and ai. We ended up with fairly dumb Minotaurs, early they would essentially get glued to walls but we ended up detecting whether or not there was an open path in each direction the minotair could go to. Which direction they would choose is still random however, with a bit of help, preventing the Minotaur from just walking left and right the whole time.
 
 Building the levels in engine by placing the scenes hand by hand would have been a pain, so we decided to build a simple level editor. The basic idea was to draw an image in a format as big the level was supposed to be. So if the map was supposed to be 32x32 tiles, we would create a png with 32x32 pixels. We used different colors to represent certain scenes. Green would be the hedges/walls, red and blue the players and yellow the Minotaur. We parsed the image in Godot and programmatically instantiated all the scenes and attached them to the world.
 
-<img src="./scenes/levels/Maze_01.png" alt="Maze Example 1" width="200" style="image-rendering: pixelated !important"/>
-<img src="./scenes/levels/Maze_02.png" alt="Maze Example 2" width="200" style="image-rendering: pixelated !important"/>
-<img src="./scenes/levels/Maze_03.png" alt="Maze Example 3" width="200" style="image-rendering: pixelated !important"/>
-
-![Maze](./scenes/levels/Maze_03.png)
+![Maze 1](./scenes/levels/Maze_01.png)
+![Maze 1](./scenes/levels/Maze_02.png)
+![Maze 1](./scenes/levels/Maze_03.png)
 
 This made it very easy to create new maps and was just a very enjoyable exercise.
 
 Here and there throughout the process we added all the sound effects and music. We wanted the basic background music to play the whole time and layer additional instruments over it when the player got close to a Minotaur. We ended up sticking the overlayed music on to the Minotaur Scene itself so we could just use Godots Distance feature for the AudioStreamplayer2D instead of handling that logik ourselves. We are initially planning to handle all the music in a central scene but this ended up being just a bit too convenient.
 
 <audio controls src="./sound/Background_1.mp3"></audio>
-
-![Sound](./sound/Background_1.mp3)
 
 
 <audio controls src="./sound/Monster_1.mp3"></audio>

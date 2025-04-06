@@ -5,7 +5,7 @@ extends Node
 @onready var camera1 = $Viewports/P1/SubViewport/Camera/Camera2D
 @onready var camera2 = $Viewports/P2/SubViewport/Camera/Camera2D
 @onready var level_builder = $LevelBuilder
-@onready var music_manager = $MusicManager
+@onready var music_manager = $MusicManager/CalmMusic
 @onready var pause_menu = $PauseMenu
 @onready var win_screen = $WinScreen
 @onready var main_menu = $MainMenu
@@ -51,6 +51,8 @@ func start_game():
 	p2.connect("died", on_p2_died)
 	p1.connect("meet", on_players_meet)
 	p2.connect("meet", on_players_meet)
+	
+	music_manager.play()
 
 
 func try_again():

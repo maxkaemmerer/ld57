@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckvgdhtxjxb8a"]
+
+[ext_resource type="Theme" uid="uid://c0t0c5i7r42c7" path="res://theme.tres" id="1_2wh52"]
+[ext_resource type="Script" uid="uid://dhpwmsgnic6qx" path="res://scenes/main_menu.gd" id="2_2wh52"]
+[ext_resource type="FontFile" uid="uid://dlcmnigb77bdo" path="res://font/Jacquard12-Regular.ttf" id="3_l72w3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_40atx"]
+font = ExtResource("3_l72w3")
+font_size = 200
+
+[node name="MainMenu" type="Control"]
+process_mode = 3
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2wh52")
+script = ExtResource("2_2wh52")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0495828, 0.00513163, 0.119493, 1)
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 2
+text = "The Minotaur's Maze"
+label_settings = SubResource("LabelSettings_40atx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Start
+"
+
+[node name="Quit" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit
+"

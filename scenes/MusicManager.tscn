@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://3tiqhwprcc7h" path="res://sound/LD57_Maze_Background_01.mp3" id="1_k17rw"]
 
 [node name="MusicManager" type="Node"]
+process_mode = 3
 
 [node name="CalmMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_k17rw")

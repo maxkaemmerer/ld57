@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq5xyeadlc6kj"]
+[gd_scene load_steps=9 format=3 uid="uid://dq5xyeadlc6kj"]
 
 [ext_resource type="Script" uid="uid://bscvnwiym87ro" path="res://scenes/game.gd" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://btaqcg0tsl2fy" path="res://scenes/background.gd" id="2_78awf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chgemd6htxchd" path="res://scenes/LevelBuilder.tscn" id="5_s0nni"]
 [ext_resource type="PackedScene" uid="uid://c2sqyesmgjbqy" path="res://scenes/PauseMenu.tscn" id="6_aug50"]
 [ext_resource type="PackedScene" uid="uid://berbn63yxj7s8" path="res://scenes/win_screen.tscn" id="7_kiw3p"]
+[ext_resource type="PackedScene" uid="uid://ckvgdhtxjxb8a" path="res://scenes/MainMenu.tscn" id="8_400sg"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ibkli")
@@ -65,3 +66,5 @@ visible = false
 
 [node name="WinScreen" parent="." instance=ExtResource("7_kiw3p")]
 visible = false
+
+[node name="MainMenu" parent="." instance=ExtResource("8_400sg")]

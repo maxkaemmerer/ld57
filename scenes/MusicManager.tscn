@@ -7,5 +7,6 @@ process_mode = 3
 
 [node name="CalmMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_k17rw")
+volume_db = -14.362
 autoplay = true
 bus = &"Music"

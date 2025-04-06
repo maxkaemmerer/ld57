@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://vae75jlbh50g"]
+[gd_scene load_steps=3 format=3 uid="uid://vae75jlbh50g"]
 
 [ext_resource type="Script" uid="uid://d4brdpnm4h0sp" path="res://graphics/shaders/ping.gd" id="2_6ihqj"]
+[ext_resource type="AudioStream" uid="uid://cr76dl35vv71l" path="res://sound/PlayerSignal1.mp3" id="2_n5jyd"]
 
 [node name="Ping" type="Node2D"]
 z_index = 3
@@ -25,3 +26,7 @@ orbit_velocity_max = 0.2
 radial_accel_min = 100.0
 radial_accel_max = 100.0
 angle_max = 471.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_n5jyd")
+autoplay = true

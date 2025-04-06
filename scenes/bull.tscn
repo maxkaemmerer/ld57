@@ -5,9 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://by0hawjlxkjr0" path="res://sound/monster-footsteps-on-gravel-01.mp3" id="3_fbkg3"]
 [ext_resource type="AudioStream" uid="uid://cec0hw8lc6e1d" path="res://sound/monster-footsteps-on-gravel-02.mp3" id="4_few7h"]
 [ext_resource type="AudioStream" uid="uid://chb842ripal0u" path="res://sound/monster-footsteps-on-gravel-03.mp3" id="5_bav2j"]
+[ext_resource type="AudioStream" uid="uid://i2eqsf63jf13" path="res://sound/Monster_1.mp3" id="6_cvj11"]
 [ext_resource type="AudioStream" uid="uid://b60twjdffpox" path="res://sound/monster-footsteps-on-gravel-04.mp3" id="6_o2ojk"]
-[ext_resource type="AudioStream" uid="uid://bfrp3jj5brs8j" path="res://sound/Monster_1.wav" id="7_bav2j"]
-[ext_resource type="AudioStream" uid="uid://dn6uq7n1itxmq" path="res://sound/Excitement_1.wav" id="8_o2ojk"]
+[ext_resource type="AudioStream" uid="uid://b2igkabl51yek" path="res://sound/Excitement_1.mp3" id="7_n733k"]
 [ext_resource type="AudioStream" uid="uid://dvc8h8p37vley" path="res://sound/Bull hits wall.mp3" id="9_o2ojk"]
 [ext_resource type="AudioStream" uid="uid://d3r8wojbs4kob" path="res://sound/Powerup_Charge.mp3" id="10_cvj11"]
 
@@ -114,13 +114,13 @@ max_distance = 109.0
 bus = &"SFX"
 
 [node name="MonsterMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_bav2j")
+stream = ExtResource("6_cvj11")
 autoplay = true
 max_distance = 132.0
 bus = &"Music"
 
 [node name="ExcitementMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_o2ojk")
+stream = ExtResource("7_n733k")
 autoplay = true
 max_distance = 73.0
 bus = &"Music"

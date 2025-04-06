@@ -80,11 +80,11 @@ func _physics_process(delta: float) -> void:
 		print("Charging")
 	elif bull_state == BullState.SEARCHING:
 		# Turn, looking for the player
-		rotation += delta * rotation_speed
+		vision.rotation += delta * rotation_speed
 	elif bull_state == BullState.WANDERING:
 		velocity = wander_direction * speed()
 		# Not sure why i need the -90 degree here
-		rotation = wander_direction.angle() + deg_to_rad(-90)
+		vision.rotation = wander_direction.angle() + deg_to_rad(-90)
 	elif bull_state == BullState.FOLLOWING:
 		# Arrived where it last saw the player and stops
 		if last_known_target && position.distance_to(last_known_target) < 5:

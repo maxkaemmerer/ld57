@@ -8,6 +8,7 @@ enum BullState {CHARGING, SEARCHING, FOLLOWING, WANDERING}
 @onready var sprite = $Sprite2D
 @onready var charge_cooldown = $ChargeCooldown
 @onready var search_timer = $SearchTimer
+@onready var foot_steps = $Steps
 
 @export var charge_cooldown_time = 10
 @export var search_time = 5
@@ -38,6 +39,19 @@ func speed():
 		return wander_speed
 
 func _physics_process(delta: float) -> void:
+	if bull_state == BullState.CHARGING || bull_state == BullState.FOLLOWING || bull_state == BullState.WANDERING:
+		if !foot_steps.playing:
+			foot_steps.play()
+		
+		if bull_state == BullState.CHARGING:
+			foot_steps.pitch_scale = 1.6
+		elif bull_state == BullState.WANDERING: 
+			foot_steps.pitch_scale = 1.2
+		else:
+			foot_steps.pitch_scale = 1.4
+	else:
+		foot_steps.stop()
+	
 	# Look if we see the player
 	if bull_state != BullState.CHARGING && vision.is_colliding():
 		var collider = vision.get_collider()

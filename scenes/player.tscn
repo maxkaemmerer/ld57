@@ -48,6 +48,7 @@ texture = ExtResource("1_3vyb7")
 stream = SubResource("AudioStreamRandomizer_qhqgy")
 volume_db = -3.0
 autoplay = true
+max_distance = 92.0
 bus = &"SFX"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

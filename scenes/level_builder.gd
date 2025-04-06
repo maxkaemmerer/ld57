@@ -8,10 +8,11 @@ var bull = preload("res://scenes/bull.tscn")
 
 @export var level_images: Array[CompressedTexture2D]
 @export var tile_size = 16
+@export var random_level_selection = false
 
 # Called when the node enters the scene tree for the first time.
 func build() -> Node2D:
-	var level_image = level_images.pick_random()
+	var level_image = level_images.pick_random() if random_level_selection else level_images.front()
 	
 	var map: Node2D = Node2D.new()
 	var level_width = level_image.get_image().get_width()

@@ -8,3 +8,4 @@
 [node name="LevelBuilder" type="Node"]
 script = ExtResource("1_kat42")
 level_images = Array[CompressedTexture2D]([ExtResource("2_gqa6u"), ExtResource("2_u4vu2"), ExtResource("4_ufj5v")])
+random_level_selection = true

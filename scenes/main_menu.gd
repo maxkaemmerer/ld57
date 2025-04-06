@@ -1,7 +1,7 @@
 extends Control
 
-@onready var quit_button = $Menu/Quit
-@onready var start_button = $Menu/Start
+@onready var quit_button = $Menu/HBoxContainer/VBoxContainer/Quit
+@onready var start_button = $Menu/HBoxContainer/VBoxContainer/Start
 
 signal start
 
@@ -10,7 +10,7 @@ func _ready() -> void:
 	quit_button.connect("button_down", on_click_quit)
 	start_button.connect("button_down", on_click_start)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if visible && !get_tree().paused:
 		get_tree().paused = true
 

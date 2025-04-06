@@ -122,4 +122,4 @@ func on_finished_searching():
 	wandering.emit()
 	
 func pick_wander_direction():
-	return [Vector2.DOWN, Vector2.LEFT, Vector2.UP, Vector2.RIGHT][randi_range(0, 3)]
+	return [Vector2.DOWN, Vector2.LEFT, Vector2.UP, Vector2.RIGHT].pick_random()

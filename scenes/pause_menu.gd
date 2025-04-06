@@ -8,7 +8,7 @@ func _ready() -> void:
 	quit_button.connect("button_down", on_click_quit)
 	resume_button.connect("button_down", on_click_resume)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if visible && !get_tree().paused:
 		get_tree().paused = true
 

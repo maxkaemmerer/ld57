@@ -6,11 +6,13 @@ var floor_ = preload("res://scenes/floor.tscn")
 var player = preload("res://scenes/player.tscn")
 var bull = preload("res://scenes/bull.tscn")
 
-@export var level_image = load("res://scenes/levels/test.png")
+@export var level_images: Array[CompressedTexture2D]
 @export var tile_size = 16
 
 # Called when the node enters the scene tree for the first time.
 func build() -> Node2D:
+	var level_image = level_images.pick_random()
+	
 	var map: Node2D = Node2D.new()
 	var level_width = level_image.get_image().get_width()
 	var level_height = level_image.get_image().get_height()

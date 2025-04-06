@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckvgdhtxjxb8a"]
+[gd_scene load_steps=7 format=3 uid="uid://ckvgdhtxjxb8a"]
 
 [ext_resource type="Theme" uid="uid://c0t0c5i7r42c7" path="res://theme.tres" id="1_2wh52"]
 [ext_resource type="Script" uid="uid://dhpwmsgnic6qx" path="res://scenes/main_menu.gd" id="2_2wh52"]
@@ -7,6 +7,12 @@
 [sub_resource type="LabelSettings" id="LabelSettings_40atx"]
 font = ExtResource("3_l72w3")
 font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_2wh52"]
+font_size = 53
+
+[sub_resource type="LabelSettings" id="LabelSettings_ow34m"]
+font_size = 38
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -45,16 +51,50 @@ label_settings = SubResource("LabelSettings_40atx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Start" type="Button" parent="Menu"]
+[node name="Label2" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Reunite in the maze but watch out for its guardian!"
+label_settings = SubResource("LabelSettings_2wh52")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+layout_mode = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="TutorialP1" type="Label" parent="Menu/HBoxContainer"]
+layout_mode = 2
+text = "Player 1:
+
+Move with W,A,S,D
+Call out with SPACEBAR
+"
+label_settings = SubResource("LabelSettings_ow34m")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/HBoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Menu/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Start
 "
 
-[node name="Quit" type="Button" parent="Menu"]
+[node name="Quit" type="Button" parent="Menu/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Quit
 "
+
+[node name="TutorialP2" type="Label" parent="Menu/HBoxContainer"]
+layout_mode = 2
+text = "Player 2:
+
+Move with ↑,←, ↓,→ 
+Call out with ENTER
+"
+label_settings = SubResource("LabelSettings_ow34m")
+horizontal_alignment = 1

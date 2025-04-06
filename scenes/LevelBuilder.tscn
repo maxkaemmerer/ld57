@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://chgemd6htxchd"]
+[gd_scene load_steps=7 format=3 uid="uid://chgemd6htxchd"]
 
 [ext_resource type="Script" uid="uid://ccl23xjfwjacl" path="res://scenes/level_builder.gd" id="1_kat42"]
 [ext_resource type="Texture2D" uid="uid://dild0u12rvusw" path="res://scenes/levels/arena.png" id="2_gqa6u"]
 [ext_resource type="Texture2D" uid="uid://cxanxe4085fap" path="res://scenes/levels/test.png" id="2_u4vu2"]
 [ext_resource type="Texture2D" uid="uid://5ioo5dfbdav3" path="res://scenes/levels/Maze_01.png" id="4_ufj5v"]
 [ext_resource type="Texture2D" uid="uid://2bm7udrre606" path="res://scenes/levels/Maze_02.png" id="5_dwp0x"]
+[ext_resource type="Texture2D" uid="uid://chov160s7nqmi" path="res://scenes/levels/Maze_03.png" id="6_urgn8"]
 
 [node name="LevelBuilder" type="Node"]
 script = ExtResource("1_kat42")
-level_images = Array[CompressedTexture2D]([ExtResource("2_gqa6u"), ExtResource("2_u4vu2"), ExtResource("4_ufj5v"), ExtResource("5_dwp0x")])
+level_images = Array[CompressedTexture2D]([ExtResource("2_gqa6u"), ExtResource("2_u4vu2"), ExtResource("4_ufj5v"), ExtResource("5_dwp0x"), ExtResource("6_urgn8")])
 random_level_selection = true

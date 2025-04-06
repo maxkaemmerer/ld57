@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c0t0c5i7r42c7"]
+
+[ext_resource type="FontFile" uid="uid://cpirfhadjhc8x" path="res://font/Jersey15-Regular.ttf" id="1_e1x85"]
+
+[resource]
+default_font = ExtResource("1_e1x85")
+default_font_size = 80
+VBoxContainer/constants/separation = 40

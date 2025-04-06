@@ -16,6 +16,7 @@ var life_points
 var hurtable = true
 
 signal died
+signal meet
 
 func _ready() -> void:
 	ping = preload("res://scenes/ping.tscn")
@@ -50,7 +51,9 @@ func _physics_process(delta: float) -> void:
 	# Handle Collusion
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
-			velocity = velocity.bounce(collision_info.get_normal())
+		if "Player" in collision_info.get_collider().name:
+			meet.emit()
+		velocity = velocity.bounce(collision_info.get_normal())
 				
 	if life_points == 0:
 		died.emit()

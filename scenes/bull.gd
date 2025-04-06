@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 		if collider && "Player" in collider.name:
 			bull_state = BullState.FOLLOWING
 			following.emit()
-			last_known_target = collider.position
+			last_known_target = collider.global_position
 			if can_charge:
 				bull_state = BullState.CHARGING
 				charging.emit()

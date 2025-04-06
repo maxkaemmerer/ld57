@@ -93,7 +93,7 @@ text = "Quit
 layout_mode = 2
 text = "Player 2:
 
-Move with ↑,←, ↓,→ 
+Move with ARROWKEYS
 Call out with ENTER
 "
 label_settings = SubResource("LabelSettings_ow34m")

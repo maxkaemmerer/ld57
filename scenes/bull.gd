@@ -10,6 +10,7 @@ enum BullState {CHARGING, SEARCHING, FOLLOWING, WANDERING}
 @onready var foot_steps = $Steps
 @onready var bull_charged_wall_sfx = $BullChargedWall
 @onready var bull_charges_sfx = $BullCharges
+@onready var bull_walk_fx = $BullWalk
 @onready var animation = $AnimatedSprite2D
 
 @onready var wall_detect_left = $Left
@@ -55,6 +56,7 @@ func speed():
 
 func _physics_process(delta: float) -> void:
 	if bull_state == BullState.CHARGING || bull_state == BullState.FOLLOWING || bull_state == BullState.WANDERING:
+		bull_walk_fx.emitting = true
 		if !foot_steps.playing:
 			foot_steps.play()
 		
@@ -65,6 +67,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			foot_steps.pitch_scale = 1.4
 	else:
+		bull_walk_fx.emitting = false
 		foot_steps.stop()
 	
 	# Look if we see the player

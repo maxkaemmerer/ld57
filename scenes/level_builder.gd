@@ -12,11 +12,12 @@ var bull = preload("res://scenes/bull.tscn")
 # Called when the node enters the scene tree for the first time.
 func build() -> Node2D:
 	var map: Node2D = Node2D.new()
+	var level_width = level_image.get_image().get_width()
+	var level_height = level_image.get_image().get_height()
 	
 	for y in range(0, level_image.get_image().get_height()):
-		for x in range (0, level_image.get_image().get_width()):
+		for x in range (0, level_width):
 			var pixel = level_image.get_image().get_pixel(x,y)
-			print(pixel)
 			var tile_position = Vector2(x * tile_size, y * tile_size)
 			
 			if pixel == Color(1, 0, 0, 1):
@@ -29,6 +30,7 @@ func build() -> Node2D:
 			
 			if pixel == Color(1, 1, 0, 1):
 				var bull_tile = bull.instantiate()
+				bull_tile.name = "Bull"
 				bull_tile.position = tile_position
 				map.add_child(bull_tile)
 			
@@ -41,11 +43,14 @@ func build() -> Node2D:
 			
 			elif pixel == Color(0, 1, 0, 1):
 				var hedge_tile = hedge.instantiate()
+				hedge_tile.name = "Hedge_" + str(x) + str(y)
+				hedge_tile.destructable = !(x == 0 || x == level_width -1 || y == 0 || y == level_height - 1)
 				hedge_tile.position = tile_position
 				map.add_child(hedge_tile)
 
 			var floor__tile = floor_.instantiate()
 			floor__tile.position = tile_position
+			floor__tile.name = "Floor_" + str(x) + str(y)
 			map.add_child(floor__tile)
 
 	return map

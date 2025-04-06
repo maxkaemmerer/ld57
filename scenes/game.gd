@@ -7,10 +7,24 @@ extends Node
 @onready var level_builder = $LevelBuilder
 
 
+var p1_spawn_point: Vector2
+var p2_spawn_point: Vector2
+var map: Node2D
+
 func _ready():
-	var map: Node2D = level_builder.build()
+	map = level_builder.build()
 	viewport1.add_child(map)
 	viewport2.world_2d = viewport1.world_2d
-	camera1.target = map.get_node("Player_1")
-	camera2.target = map.get_node("Player_2")
-	
+	var p1 = map.get_node("Player_1")
+	var p2 = map.get_node("Player_2")
+	camera1.target = p1
+	camera2.target = p2
+	p1_spawn_point = p1.position
+	p2_spawn_point = p2.position
+	p1.connect("died", on_p1_died)
+	p2.connect("died", on_p2_died)
+
+func on_p1_died():
+	map.get_node("Player_1").position = p1_spawn_point
+func on_p2_died():
+	map.get_node("Player_2").position = p2_spawn_point

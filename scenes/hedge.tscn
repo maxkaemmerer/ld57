@@ -5,7 +5,7 @@
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_11ilm"]
 closed = false
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, -8)
+polygon = PackedVector2Array(-8, -8, 0, 0, -8, 8, 0, 0, 8, 8, 0, 0, 8, -8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65ieu"]
 size = Vector2(14, 14)

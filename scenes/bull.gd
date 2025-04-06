@@ -18,6 +18,11 @@ enum BullState {CHARGING, SEARCHING, FOLLOWING, WANDERING}
 @export var follow_speed = 150.0
 @export var rotation_speed = 3.0
 
+signal following
+signal charging
+signal searching
+signal wandering
+
 var can_charge = true
 var bull_state: BullState = BullState.SEARCHING
 
@@ -57,9 +62,11 @@ func _physics_process(delta: float) -> void:
 		var collider = vision.get_collider()
 		if collider && "Player" in collider.name:
 			bull_state = BullState.FOLLOWING
+			following.emit()
 			last_known_target = collider.position
 			if can_charge:
 				bull_state = BullState.CHARGING
+				charging.emit()
 				velocity = position.direction_to(last_known_target) * speed()
 				charge_cooldown.start(charge_cooldown_time)
 	
@@ -83,6 +90,7 @@ func _physics_process(delta: float) -> void:
 			velocity = position.direction_to(last_known_target) * speed()
 		else:
 			bull_state = BullState.SEARCHING
+			searching.emit()
 			velocity = Vector2.ZERO
 	
 	var collision_info = move_and_collide(velocity * delta)
@@ -92,6 +100,7 @@ func _physics_process(delta: float) -> void:
 			print("Colided: " + collider.name)
 			if bull_state == BullState.CHARGING:
 				bull_state = BullState.SEARCHING
+				searching.emit()
 				search_timer.start(search_time)
 				can_charge = false
 				if "Hedge" in collider.name && collider.destructable:
@@ -110,6 +119,7 @@ func on_charge_cooldown_expired():
 
 func on_finished_searching():
 	bull_state = BullState.WANDERING
+	wandering.emit()
 	
 func pick_wander_direction():
 	return [Vector2.DOWN, Vector2.LEFT, Vector2.UP, Vector2.RIGHT][randi_range(0, 3)]

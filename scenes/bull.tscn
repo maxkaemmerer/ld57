@@ -99,7 +99,7 @@ shape = SubResource("CapsuleShape2D_pjux2")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 150)
-collision_mask = 8
+collision_mask = 10
 collide_with_areas = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
@@ -143,3 +143,19 @@ bus = &"SFX"
 material = SubResource("CanvasItemMaterial_cvj11")
 sprite_frames = SubResource("SpriteFrames_egtko")
 animation = &"search"
+
+[node name="Left" type="RayCast2D" parent="."]
+target_position = Vector2(-5, 0)
+collision_mask = 2
+
+[node name="Right" type="RayCast2D" parent="."]
+target_position = Vector2(5, 0)
+collision_mask = 2
+
+[node name="Top" type="RayCast2D" parent="."]
+target_position = Vector2(0, -5)
+collision_mask = 2
+
+[node name="Bottom" type="RayCast2D" parent="."]
+target_position = Vector2(0, 5)
+collision_mask = 2

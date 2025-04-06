@@ -8,7 +8,7 @@ closed = false
 polygon = PackedVector2Array(-8, -8, 0, 0, -8, 8, 0, 0, 8, 8, 0, 0, 8, -8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65ieu"]
-size = Vector2(14, 14)
+size = Vector2(16, 16)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gt4j5"]
 light_mode = 2

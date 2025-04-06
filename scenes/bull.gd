@@ -12,6 +12,11 @@ enum BullState {CHARGING, SEARCHING, FOLLOWING, WANDERING}
 @onready var bull_charges_sfx = $BullCharges
 @onready var animation = $AnimatedSprite2D
 
+@onready var wall_detect_left = $Left
+@onready var wall_detect_right = $Right
+@onready var wall_detect_top = $Top
+@onready var wall_detect_bottom = $Bottom
+
 @export var charge_cooldown_time = 10
 @export var search_time = 5
 
@@ -30,6 +35,8 @@ var bull_state: BullState = BullState.SEARCHING
 
 var last_known_target
 var wander_direction: Vector2 = Vector2.DOWN
+var previous_wander_direction: Vector2
+var previous_valid_drections: Array[Vector2]
 
 func _ready() -> void:
 	velocity = Vector2.DOWN
@@ -82,6 +89,9 @@ func _physics_process(delta: float) -> void:
 		# Turn, looking for the player
 		vision.rotation += delta * rotation_speed
 	elif bull_state == BullState.WANDERING:
+		previous_wander_direction = wander_direction
+		wander_direction = pick_wander_direction()
+		
 		velocity = wander_direction * speed()
 		# Not sure why i need the -90 degree here
 		vision.rotation = wander_direction.angle() + deg_to_rad(-90)
@@ -117,7 +127,7 @@ func _physics_process(delta: float) -> void:
 						print("Collided with destructable Hedge: " + collider.name)
 						collider.queue_free()
 			else:
-				wander_direction = pick_wander_direction()
+				wander_direction = pick_wander_direction(true)
 			
 			if "Player" in collider.name:
 				print("Squashed: " + collider.name)
@@ -132,5 +142,21 @@ func on_finished_searching():
 	animation.play("walk")
 	wandering.emit()
 	
-func pick_wander_direction():
-	return [Vector2.DOWN, Vector2.LEFT, Vector2.UP, Vector2.RIGHT].pick_random()
+func pick_wander_direction(force_new: bool = false):
+	var valid_directions: Array[Vector2] = []
+	if !wall_detect_left.is_colliding():
+		valid_directions.append(Vector2.LEFT)
+	if !wall_detect_right.is_colliding():
+		valid_directions.append(Vector2.RIGHT)
+	if !wall_detect_bottom.is_colliding():
+		valid_directions.append(Vector2.DOWN)
+	if !wall_detect_top.is_colliding():
+		valid_directions.append(Vector2.UP)
+	if force_new || previous_valid_drections != valid_directions:
+		previous_valid_drections = valid_directions
+		if len(valid_directions) > 1:
+			# Try to avoid going back and forth all the time
+			return valid_directions.filter(func(valid_direction): return valid_direction != Vector2(1 / previous_wander_direction.x, 1 / previous_wander_direction.y)).pick_random()
+		return valid_directions.pick_random()
+	else:
+		return previous_wander_direction

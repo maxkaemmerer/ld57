@@ -36,7 +36,7 @@ Here and there throughout the process we added all the sound effects and music. 
 
 We wanted the player to be worried about what they saw around each corner, which informed both the music and lighting. The lighting was a bit of an issue and did not end up the way we wanted it, but it still ended up kind of interesting.
 
-We finished up by adding very simpel animations and cleaning up the Minotair path finding a bit. After we playtested it was a bit to easy so we added more Minotaurs.
+We finished up by adding very simple animations and cleaning up the Minotair path finding a bit. After we playtested it was a bit to easy so we added more Minotaurs.
 
 
 ## Takeaways

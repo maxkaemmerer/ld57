@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvc8h8p37vley"
+path="res://.godot/imported/Bull hits wall.mp3-f51e295ae6fe1543330f035d58fcc2c5.mp3str"
+
+[deps]
+
+source_file="res://sound/Bull hits wall.mp3"
+dest_files=["res://.godot/imported/Bull hits wall.mp3-f51e295ae6fe1543330f035d58fcc2c5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

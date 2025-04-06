@@ -10,6 +10,8 @@ const SPEED = 150.0
 @onready var player_walking = $PlayerWalking
 @onready var sprite = $Sprite2D
 @onready var hurt_cooldown_timer = $HurtCooldown
+@onready var hurt_sfx = $Hurt
+@onready var die_sfx = $Die
 
 var ping
 var life_points
@@ -56,6 +58,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.bounce(collision_info.get_normal())
 				
 	if life_points == 0:
+		die_sfx.play()
 		died.emit()
 		life_points = default_life_points
 
@@ -65,6 +68,7 @@ func on_hurt_cooldown_finished():
 func hurt():
 	print("Hurt", hurtable)
 	if hurtable:
+		hurt_sfx.play()
 		life_points -= 1
 		hurt_cooldown_timer.start(hurt_cooldown)
 		hurtable = false

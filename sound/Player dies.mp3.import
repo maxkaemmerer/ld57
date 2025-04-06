@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk1odneiogm81"
+path="res://.godot/imported/Player dies.mp3-c58cbfd3fe6bcbdb8ead5c8f016da1d1.mp3str"
+
+[deps]
+
+source_file="res://sound/Player dies.mp3"
+dest_files=["res://.godot/imported/Player dies.mp3-c58cbfd3fe6bcbdb8ead5c8f016da1d1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

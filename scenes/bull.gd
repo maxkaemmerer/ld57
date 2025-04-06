@@ -9,6 +9,8 @@ enum BullState {CHARGING, SEARCHING, FOLLOWING, WANDERING}
 @onready var charge_cooldown = $ChargeCooldown
 @onready var search_timer = $SearchTimer
 @onready var foot_steps = $Steps
+@onready var bull_charged_wall_sfx = $BullChargedWall
+@onready var bull_charges_sfx = $BullCharges
 
 @export var charge_cooldown_time = 10
 @export var search_time = 5
@@ -69,6 +71,7 @@ func _physics_process(delta: float) -> void:
 				charging.emit()
 				velocity = position.direction_to(last_known_target) * speed()
 				charge_cooldown.start(charge_cooldown_time)
+				bull_charges_sfx.play()
 	
 	if bull_state == BullState.CHARGING:
 		print("Charging")
@@ -103,9 +106,11 @@ func _physics_process(delta: float) -> void:
 				searching.emit()
 				search_timer.start(search_time)
 				can_charge = false
-				if "Hedge" in collider.name && collider.destructable:
-					print("Collided with destructable Hedge: " + collider.name)
-					collider.queue_free()
+				if "Hedge" in collider.name:
+					bull_charged_wall_sfx.play()
+					if collider.destructable:
+						print("Collided with destructable Hedge: " + collider.name)
+						collider.queue_free()
 			else:
 				wander_direction = pick_wander_direction()
 			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq5xyeadlc6kj"]
+[gd_scene load_steps=11 format=3 uid="uid://dq5xyeadlc6kj"]
 
 [ext_resource type="Script" uid="uid://bscvnwiym87ro" path="res://scenes/game.gd" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://btaqcg0tsl2fy" path="res://scenes/background.gd" id="2_78awf"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://c2sqyesmgjbqy" path="res://scenes/PauseMenu.tscn" id="6_aug50"]
 [ext_resource type="PackedScene" uid="uid://berbn63yxj7s8" path="res://scenes/win_screen.tscn" id="7_kiw3p"]
 [ext_resource type="PackedScene" uid="uid://ckvgdhtxjxb8a" path="res://scenes/MainMenu.tscn" id="8_400sg"]
+[ext_resource type="FontFile" uid="uid://dlcmnigb77bdo" path="res://font/Jacquard12-Regular.ttf" id="9_g4kob"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qy1jj"]
+font = ExtResource("9_g4kob")
+font_size = 200
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ibkli")
@@ -68,3 +73,19 @@ visible = false
 visible = false
 
 [node name="MainMenu" parent="." instance=ExtResource("8_400sg")]
+
+[node name="TryAgain!" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_right = 400.0
+offset_bottom = 201.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Try again!"
+label_settings = SubResource("LabelSettings_qy1jj")
+horizontal_alignment = 1
+
+[node name="HideTryAgain" type="Timer" parent="."]

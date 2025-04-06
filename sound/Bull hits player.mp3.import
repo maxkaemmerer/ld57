@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bptew4021xg3g"
+path="res://.godot/imported/Bull hits player.mp3-eff6303ee84e05a2a52455b6a5090578.mp3str"
+
+[deps]
+
+source_file="res://sound/Bull hits player.mp3"
+dest_files=["res://.godot/imported/Bull hits player.mp3-eff6303ee84e05a2a52455b6a5090578.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

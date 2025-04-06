@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://berbn63yxj7s8"]
+[gd_scene load_steps=6 format=3 uid="uid://berbn63yxj7s8"]
 
 [ext_resource type="Script" uid="uid://cw23e2d0prq7i" path="res://scenes/win_screen.gd" id="1_2l6cc"]
 [ext_resource type="Theme" uid="uid://c0t0c5i7r42c7" path="res://theme.tres" id="1_wv5lq"]
 [ext_resource type="FontFile" uid="uid://dlcmnigb77bdo" path="res://font/Jacquard12-Regular.ttf" id="2_erk2x"]
+[ext_resource type="AudioStream" uid="uid://cc43iotmxy5b6" path="res://sound/Players meet.mp3" id="4_e41g7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s508f"]
 font = ExtResource("2_erk2x")
@@ -51,3 +52,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Quit
 "
+
+[node name="Win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_e41g7")
+bus = &"SFX"

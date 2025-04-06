@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://77d2u5tv5vm8"]
+[gd_scene load_steps=15 format=3 uid="uid://77d2u5tv5vm8"]
 
 [ext_resource type="Script" uid="uid://dhempykmgembg" path="res://scenes/bull.gd" id="1_qus7o"]
 [ext_resource type="Texture2D" uid="uid://ct85ag7p83ilb" path="res://graphics/bull.png" id="2_hqf4x"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://b60twjdffpox" path="res://sound/monster-footsteps-on-gravel-04.mp3" id="6_o2ojk"]
 [ext_resource type="AudioStream" uid="uid://bfrp3jj5brs8j" path="res://sound/Monster_1.wav" id="7_bav2j"]
 [ext_resource type="AudioStream" uid="uid://dn6uq7n1itxmq" path="res://sound/Excitement_1.wav" id="8_o2ojk"]
+[ext_resource type="AudioStream" uid="uid://dvc8h8p37vley" path="res://sound/Bull hits wall.mp3" id="9_o2ojk"]
+[ext_resource type="AudioStream" uid="uid://d3r8wojbs4kob" path="res://sound/Powerup_Charge.mp3" id="10_cvj11"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qus7o"]
 light_mode = 2
@@ -61,8 +63,18 @@ bus = &"SFX"
 stream = ExtResource("7_bav2j")
 autoplay = true
 max_distance = 132.0
+bus = &"Music"
 
 [node name="ExcitementMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_o2ojk")
 autoplay = true
 max_distance = 73.0
+bus = &"Music"
+
+[node name="BullChargedWall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_o2ojk")
+bus = &"SFX"
+
+[node name="BullCharges" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_cvj11")
+bus = &"SFX"

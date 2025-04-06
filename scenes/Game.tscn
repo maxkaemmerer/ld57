@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq5xyeadlc6kj"]
+[gd_scene load_steps=8 format=3 uid="uid://dq5xyeadlc6kj"]
 
 [ext_resource type="Script" uid="uid://bscvnwiym87ro" path="res://scenes/game.gd" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://btaqcg0tsl2fy" path="res://scenes/background.gd" id="2_78awf"]
 [ext_resource type="PackedScene" uid="uid://c1ux186oa14f6" path="res://scenes/Camera.tscn" id="3_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://dv6xynf5fl64e" path="res://scenes/MusicManager.tscn" id="5_aug50"]
 [ext_resource type="PackedScene" uid="uid://chgemd6htxchd" path="res://scenes/LevelBuilder.tscn" id="5_s0nni"]
+[ext_resource type="PackedScene" uid="uid://c2sqyesmgjbqy" path="res://scenes/PauseMenu.tscn" id="6_aug50"]
+[ext_resource type="PackedScene" uid="uid://berbn63yxj7s8" path="res://scenes/win_screen.tscn" id="7_kiw3p"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ibkli")
@@ -57,3 +59,9 @@ render_target_update_mode = 4
 [node name="LevelBuilder" parent="." instance=ExtResource("5_s0nni")]
 
 [node name="MusicManager" parent="." instance=ExtResource("5_aug50")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_aug50")]
+visible = false
+
+[node name="WinScreen" parent="." instance=ExtResource("7_kiw3p")]
+visible = false

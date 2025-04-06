@@ -6,6 +6,8 @@ extends Node
 @onready var camera2 = $Viewports/P2/SubViewport/Camera/Camera2D
 @onready var level_builder = $LevelBuilder
 @onready var music_manager = $MusicManager
+@onready var pause_menu = $PauseMenu
+@onready var win_screen = $WinScreen
 
 var win_screen_resource
 var p1_spawn_point: Vector2
@@ -29,6 +31,10 @@ func _ready():
 	p1.connect("meet", on_players_meet)
 	p2.connect("meet", on_players_meet)
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		pause_menu.visible = true
+
 func on_p1_died():
 	map.get_node("Player_1").position = p1_spawn_point
 
@@ -36,6 +42,4 @@ func on_p2_died():
 	map.get_node("Player_2").position = p2_spawn_point
 
 func on_players_meet():
-	var win_screen_instance = win_screen_resource.instantiate()
-	add_child(win_screen_instance)
-	get_tree().paused = true
+	win_screen.visible = true

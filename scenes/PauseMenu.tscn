@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://berbn63yxj7s8"]
+[gd_scene load_steps=5 format=3 uid="uid://c2sqyesmgjbqy"]
 
-[ext_resource type="Script" uid="uid://cw23e2d0prq7i" path="res://scenes/win_screen.gd" id="1_2l6cc"]
-[ext_resource type="Theme" uid="uid://c0t0c5i7r42c7" path="res://theme.tres" id="1_wv5lq"]
-[ext_resource type="FontFile" uid="uid://dlcmnigb77bdo" path="res://font/Jacquard12-Regular.ttf" id="2_erk2x"]
+[ext_resource type="Theme" uid="uid://c0t0c5i7r42c7" path="res://theme.tres" id="1_komsw"]
+[ext_resource type="Script" uid="uid://chv11pheirvjm" path="res://scenes/pause_menu.gd" id="2_5w6ei"]
+[ext_resource type="FontFile" uid="uid://dlcmnigb77bdo" path="res://font/Jacquard12-Regular.ttf" id="3_jiu6o"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_s508f"]
-font = ExtResource("2_erk2x")
+[sub_resource type="LabelSettings" id="LabelSettings_40atx"]
+font = ExtResource("3_jiu6o")
 font_size = 200
 
-[node name="WinScreen" type="Control"]
+[node name="PauseMenu" type="Control"]
 process_mode = 3
 top_level = true
 layout_mode = 3
@@ -17,7 +17,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2l6cc")
+theme = ExtResource("1_komsw")
+script = ExtResource("2_5w6ei")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -35,15 +36,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_wv5lq")
 alignment = 1
 
 [node name="Label" type="Label" parent="Menu"]
 layout_mode = 2
-text = "You Won!"
-label_settings = SubResource("LabelSettings_s508f")
+text = "Paused"
+label_settings = SubResource("LabelSettings_40atx")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume
+"
 
 [node name="Quit" type="Button" parent="Menu"]
 custom_minimum_size = Vector2(300, 0)

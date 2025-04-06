@@ -21,7 +21,7 @@ func _ready():
 	main_menu.connect("start", start_game)
 	try_again_hide_timer.connect("timeout", hide_try_again)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		pause_menu.visible = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://77d2u5tv5vm8"]
+[gd_scene load_steps=21 format=3 uid="uid://77d2u5tv5vm8"]
 
 [ext_resource type="Script" uid="uid://dhempykmgembg" path="res://scenes/bull.gd" id="1_qus7o"]
 [ext_resource type="Texture2D" uid="uid://ct85ag7p83ilb" path="res://graphics/bull.png" id="2_hqf4x"]
@@ -10,9 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://dn6uq7n1itxmq" path="res://sound/Excitement_1.wav" id="8_o2ojk"]
 [ext_resource type="AudioStream" uid="uid://dvc8h8p37vley" path="res://sound/Bull hits wall.mp3" id="9_o2ojk"]
 [ext_resource type="AudioStream" uid="uid://d3r8wojbs4kob" path="res://sound/Powerup_Charge.mp3" id="10_cvj11"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qus7o"]
-light_mode = 2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjux2"]
 radius = 4.0
@@ -28,15 +25,71 @@ stream_1/stream = ExtResource("4_few7h")
 stream_2/stream = ExtResource("5_bav2j")
 stream_3/stream = ExtResource("6_o2ojk")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_egtko"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38r83"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaqn0"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvj11"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n733k"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gmjl"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egtko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egtko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38r83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaqn0")
+}],
+"loop": true,
+"name": &"search",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvj11")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n733k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gmjl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="Bull" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_qus7o")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_qus7o")
-texture = ExtResource("2_hqf4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pjux2")
@@ -79,3 +132,7 @@ bus = &"SFX"
 [node name="BullCharges" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_cvj11")
 bus = &"SFX"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_egtko")
+animation = &"search"

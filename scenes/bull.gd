@@ -5,12 +5,12 @@ enum BullState {CHARGING, SEARCHING, FOLLOWING, WANDERING}
 
 
 @onready var vision = $RayCast2D
-@onready var sprite = $Sprite2D
 @onready var charge_cooldown = $ChargeCooldown
 @onready var search_timer = $SearchTimer
 @onready var foot_steps = $Steps
 @onready var bull_charged_wall_sfx = $BullChargedWall
 @onready var bull_charges_sfx = $BullCharges
+@onready var animation = $AnimatedSprite2D
 
 @export var charge_cooldown_time = 10
 @export var search_time = 5
@@ -36,6 +36,7 @@ func _ready() -> void:
 	charge_cooldown.connect("timeout", on_charge_cooldown_expired)
 	search_timer.connect("timeout", on_finished_searching)
 	search_timer.start(search_time)
+	animation.play("search")
 
 func speed():
 	if bull_state == BullState.CHARGING:
@@ -64,10 +65,12 @@ func _physics_process(delta: float) -> void:
 		var collider = vision.get_collider()
 		if collider && "Player" in collider.name:
 			bull_state = BullState.FOLLOWING
+			animation.play("walk")
 			following.emit()
 			last_known_target = collider.global_position
 			if can_charge:
 				bull_state = BullState.CHARGING
+				animation.play("walk")
 				charging.emit()
 				velocity = position.direction_to(last_known_target) * speed()
 				charge_cooldown.start(charge_cooldown_time)
@@ -93,6 +96,7 @@ func _physics_process(delta: float) -> void:
 			velocity = position.direction_to(last_known_target) * speed()
 		else:
 			bull_state = BullState.SEARCHING
+			animation.play("search")
 			searching.emit()
 			velocity = Vector2.ZERO
 	
@@ -103,6 +107,7 @@ func _physics_process(delta: float) -> void:
 			print("Colided: " + collider.name)
 			if bull_state == BullState.CHARGING:
 				bull_state = BullState.SEARCHING
+				animation.play("stand")
 				searching.emit()
 				search_timer.start(search_time)
 				can_charge = false
@@ -124,6 +129,7 @@ func on_charge_cooldown_expired():
 
 func on_finished_searching():
 	bull_state = BullState.WANDERING
+	animation.play("walk")
 	wandering.emit()
 	
 func pick_wander_direction():

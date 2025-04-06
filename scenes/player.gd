@@ -8,7 +8,7 @@ const SPEED = 150.0
 @export var hurt_cooldown = 1
 
 @onready var player_walking = $PlayerWalking
-@onready var sprite = $Sprite2D
+@onready var sprite = $AnimatedSprite2D
 @onready var hurt_cooldown_timer = $HurtCooldown
 @onready var hurt_sfx = $Hurt
 @onready var die_sfx = $Die
@@ -47,8 +47,11 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity == Vector2.ZERO: 
 		player_walking.stop()
+		sprite.animation = "stand"
 	elif !player_walking.playing:
 		player_walking.play()
+		sprite.animation = "walk"
+		sprite.play()
 		
 	# Handle Collusion
 	var collision_info = move_and_collide(velocity * delta)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://77d2u5tv5vm8"]
+[gd_scene load_steps=22 format=3 uid="uid://77d2u5tv5vm8"]
 
 [ext_resource type="Script" uid="uid://dhempykmgembg" path="res://scenes/bull.gd" id="1_qus7o"]
 [ext_resource type="Texture2D" uid="uid://ct85ag7p83ilb" path="res://graphics/bull.png" id="2_hqf4x"]
@@ -24,6 +24,9 @@ stream_0/stream = ExtResource("3_fbkg3")
 stream_1/stream = ExtResource("4_few7h")
 stream_2/stream = ExtResource("5_bav2j")
 stream_3/stream = ExtResource("6_o2ojk")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cvj11"]
+light_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egtko"]
 atlas = ExtResource("2_hqf4x")
@@ -115,12 +118,14 @@ bus = &"SFX"
 
 [node name="MonsterMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_cvj11")
+volume_db = 1.536
 autoplay = true
 max_distance = 132.0
 bus = &"Music"
 
 [node name="ExcitementMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_n733k")
+volume_db = 3.454
 autoplay = true
 max_distance = 73.0
 bus = &"Music"
@@ -131,8 +136,10 @@ bus = &"SFX"
 
 [node name="BullCharges" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_cvj11")
+volume_db = -2.687
 bus = &"SFX"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_cvj11")
 sprite_frames = SubResource("SpriteFrames_egtko")
 animation = &"search"

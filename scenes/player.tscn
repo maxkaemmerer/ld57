@@ -101,6 +101,10 @@ shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_fjrip")
+volume_db = -8.675
+pitch_scale = 0.54
+attenuation = 0.757858
+panning_strength = 1.22
 bus = &"SFX"
 
 [node name="Die" type="AudioStreamPlayer2D" parent="."]

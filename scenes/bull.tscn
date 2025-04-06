@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://77d2u5tv5vm8"]
+[gd_scene load_steps=23 format=3 uid="uid://77d2u5tv5vm8"]
 
 [ext_resource type="Script" uid="uid://dhempykmgembg" path="res://scenes/bull.gd" id="1_qus7o"]
 [ext_resource type="Texture2D" uid="uid://ct85ag7p83ilb" path="res://graphics/bull.png" id="2_hqf4x"]
@@ -88,6 +88,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n733k"]
+light_mode = 2
+
 [node name="Bull" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 4
@@ -159,3 +162,18 @@ collision_mask = 2
 [node name="Bottom" type="RayCast2D" parent="."]
 target_position = Vector2(0, 5)
 collision_mask = 2
+
+[node name="BullWalk" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_n733k")
+position = Vector2(0, 8)
+emitting = false
+amount = 3
+lifetime = 0.26
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.75
+direction = Vector2(0, -2)
+spread = 48.35
+gravity = Vector2(0, 200)
+initial_velocity_min = 45.14
+initial_velocity_max = 111.11

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://berbn63yxj7s8"]
+[gd_scene load_steps=7 format=3 uid="uid://berbn63yxj7s8"]
 
 [ext_resource type="Script" uid="uid://cw23e2d0prq7i" path="res://scenes/win_screen.gd" id="1_2l6cc"]
 [ext_resource type="Theme" uid="uid://c0t0c5i7r42c7" path="res://theme.tres" id="1_wv5lq"]
@@ -8,6 +8,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_s508f"]
 font = ExtResource("2_erk2x")
 font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_e41g7"]
+font_size = 44
 
 [node name="WinScreen" type="Control"]
 process_mode = 3
@@ -45,6 +48,18 @@ text = "Reunited at last!"
 label_settings = SubResource("LabelSettings_s508f")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Credits" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Credits Both" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Max Kaemmerer: Programming, Graphics, Ideas
+Meiyan Chen: Sound, Music, Ideas"
+label_settings = SubResource("LabelSettings_e41g7")
+horizontal_alignment = 1
 
 [node name="Quit" type="Button" parent="Menu"]
 custom_minimum_size = Vector2(300, 0)

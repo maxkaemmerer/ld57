@@ -1,4 +1,6 @@
 # LD57 - The Minotaur's Maze
+![Logo](./logo.png)
+
 This is the project for LD57 "Jam" by Meiyan Chen and Max Kämmerer.
 
 Playable versions embedded here

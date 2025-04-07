@@ -13,7 +13,7 @@ This is the frist game we made from scratch, without following a course or tutor
 
 We first intended to use the theme and while the theme was not announced yet we actually came up with an idea that incorporated all themes from the final round of voting. But that game would have ultimately been way too big and after the theme was chosen we ended up thinking up another idea. We had trouble finding an idea that matches the chosen theme of "Depths" while also not being a game that has been done before many times. So we ultimately ended up picking 2 of the other theme finalists in "Keep it together" and "Companion". Pretty early on we decided this was going to be a local coop game, which sounded like a cool challenge and actually ended up being very simple. 
 
-We thought about making a sort of puzzle game where both players hold the end of a rope and need to get together while untangling the rope, which would be wrapped around all kinds of obstacles, but that sounded like a physics nightmare so we decided gainst it and came up with the idea of 2 players finding each other inside of a maze while being hunted by one or multiple Minotaurs. This seemed like a doable concept so we got started.
+We thought about making a sort of puzzle game where both players hold the end of a rope and need to get together while untangling the rope, which would be wrapped around all kinds of obstacles, but that sounded like a physics nightmare so we decided against it and came up with the idea of 2 players finding each other inside of a maze while being hunted by one or multiple Minotaurs. This seemed like a doable concept so we got started.
 
 Mei got to work on music and sound effects while Max started working on the basic sprites, that were intended to be placeholders but ended up staying. Then we worked on player movement, setting up multiple viewports and controlling 2 characters at the same time. We built a basic debug level to test collision and visuals, worked on web exports and automated publishing to Github Pages.
 
@@ -32,7 +32,7 @@ Building the levels in engine by placing the scenes hand by hand would have been
 
 This made it very easy to create new maps and was just a very enjoyable exercise.
 
-Here and there throughout the process we added all the sound effects and music. We wanted the basic background music to play the whole time and layer additional instruments over it when the player got close to a Minotaur. We ended up sticking the overlayed music on to the Minotaur Scene itself so we could just use Godots Distance feature for the AudioStreamplayer2D instead of handling that logik ourselves. We are initially planning to handle all the music in a central scene but this ended up being just a bit too convenient.
+Here and there throughout the process we added all the sound effects and music. We wanted the basic background music to play the whole time and layer additional instruments over it when the player got close to a Minotaur. We ended up sticking the overlayed music on to the Minotaur Scene itself so we could just use Godots Distance feature for the AudioStreamplayer2D instead of handling that logic ourselves. We are initially planning to handle all the music in a central scene but this ended up being just a bit too convenient.
 
 <audio controls src="./sound/Background_1.mp3"></audio>
 
@@ -49,7 +49,7 @@ We finished up by adding very simple animations and cleaning up the Minotair pat
 
 ## Takeaways
 - The whole game jam experience was very fun. Quick iteration and the impossibility of perfection helped get something done in a very short amount of time.
-- We are actually pretty happy with the result, considering this is our first real attempy.
+- We are actually pretty happy with the result, considering this is our first real attempt.
 - The Leveleditor ended up working extremely well and was especially fun to build.
 - Before building another game we would like to look at how to do pathfinding and ai properly.
 - Godot is awesome. Quick build times, reasonable structures and methods to build a game, easy to collaborate via Git.

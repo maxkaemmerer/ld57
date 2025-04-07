@@ -1,6 +1,14 @@
 # LD57 - The Minotaur's Maze
 This is the project for LD57 "Jam" by Meiyan Chen and Max Kämmerer.
 
+Playable versions embedded here
+
+[Github Pages](https://maxkaemmerer.github.io/ld57/)
+
+[Ludum Dare](https://ldjam.com/events/ludum-dare/57/the-minotaurs-maze)
+
+[itch.io](https://kaumlaut.itch.io/minotaurs-maze)
+
 This is the frist game we made from scratch, without following a course or tutorials. It is also our first game jam.
 
 We first intended to use the theme and while the theme was not announced yet we actually came up with an idea that incorporated all themes from the final round of voting. But that game would have ultimately been way too big and after the theme was chosen we ended up thinking up another idea. We had trouble finding an idea that matches the chosen theme of "Depths" while also not being a game that has been done before many times. So we ultimately ended up picking 2 of the other theme finalists in "Keep it together" and "Companion". Pretty early on we decided this was going to be a local coop game, which sounded like a cool challenge and actually ended up being very simple. 
